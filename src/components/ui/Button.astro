@@ -5,14 +5,14 @@ interface Props {
     link: string;
     text: string;
     iconName?: string;
-    variant?: ButtonVariant;
+ variant?: ButtonVariant;
     ariaLabel?: string;
     disabled?: boolean;
     isLoading?: boolean;
     isExternal?: boolean;
     isActive?: boolean;
     class?: string;
-}
+ }
 
 const { 
     link, 
@@ -48,6 +48,7 @@ const baseClasses = `
     disabled:cursor-not-allowed
     disabled:hover:scale-100
     
+ 
 disabled:hover:bg-none
     disabled:hover:shadow-none
     aria-disabled:opacity-50
@@ -59,7 +60,7 @@ disabled:hover:bg-none
 // Specific classes for each variant
 const variantClasses = {
     default: `
-        text-blacktext/90 
+        text-black/90 
         dark:text-mint-50 
         dark:hover:text-white 
         px-6 
@@ -69,6 +70,7 @@ const variantClasses = {
         max-sm:px-3 
         text-lg 
       
+ 
 max-xl:text-base 
         max-sm:text-sm 
         hover:bg-linear-to-l 
@@ -83,7 +85,8 @@ max-xl:text-base
         gap-3 
         
 max-md:gap-1 
-        text-blacktext 
+ 
+        text-black 
         dark:text-mint-50 
         dark:hover:text-white 
         px-8 
@@ -94,7 +97,8 @@ max-md:gap-1
         text-2xl 
         max-xl:text-xl 
         max-sm:text-lg 
-        hover:bg-linear-to-l 
+  
+       hover:bg-linear-to-l 
         bg-linear-to-r 
         from-riptide-200 
         to-mint-200 
@@ -104,10 +108,11 @@ max-md:gap-1
     dark: `
         group 
         dark:text-mint-50 
-        text-blacktext
+        text-black
         dark:hover:text-white 
    
 px-6 
+ 
         py-4 
         max-xl:px-5 
         max-sm:py-2 
@@ -124,7 +129,7 @@ px-6
 const iconClasses = {
     default: "size-5",
     big: "size-5",
-    dark: "size-5 dark:text-mint-300 text-blacktext group-hover:text-blacktext dark:group-hover:text-white transition-colors",
+    dark: "size-5 dark:text-mint-300 text-black group-hover:text-black dark:group-hover:text-white transition-colors",
 };
 // Combine base classes with variant-specific classes
 const buttonClasses = `${baseClasses} ${variantClasses[variant]}`;
@@ -150,7 +155,7 @@ const loadingAriaLabel = isLoading ? `${buttonAriaLabel} - Cargando` : buttonAri
     <a 
         class:list={[buttonClasses, className]} 
         href={disabled ?
-'#' : link}
+ '#' : link}
         aria-label={loadingAriaLabel}
         role="button"
         aria-disabled={disabled}
