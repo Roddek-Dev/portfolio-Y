@@ -4,50 +4,45 @@ import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import  SpeedInsights  from "@vercel/speed-insights/astro"
 const {
-  pageTitle = "NeonMint by EFEELE 🚀",
-  description = "Welcome to NeonMint by EFEELE, where I develop software and share knowledge.",
+  pageTitle = "Portafolio de Yehimy Daniela Velandia Fagua 🚀",
+  description = "Bienvenido al portafolio de Yehimy Daniela Velandia Fagua, donde comparto mis proyectos y conocimientos en desarrollo de software.",
   ogimage = {
     url: "/images/imagedefault.webp",
-    alt: "Default image of EFEELE",
+    alt: "Imagen predeterminada de Yehimy Daniela Velandia Fagua",
   },
 } = Astro.props;
-
 const siteUrl = new URL(Astro.url).origin;
 const SEO = {
-  sitename: "NeonMint by EFEELE🚀",
+  sitename: "Portafolio de Yehimy Daniela Velandia Fagua 🚀",
   url: siteUrl,
-  locale: "en_US",
-  author: "Fernando Lopez | EFEELE",
-  twitter: "@efeeledev",
+  locale: "es_CO",
+  author: "Yehimy Daniela Velandia Fagua",
+  twitter: "@yehimyvelandia",
 };
-
-
 const twitterimage = `${siteUrl}${ogimage.url}`;
 ---
 
 <html
-  lang="en"
+  lang="es"
   class="dark:bg-[#0E0E11] bg-mint-50/5 font-montserrat scroll-smooth"
 >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
-    <!-- Favicon for different platforms -->
     <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" />
     <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" />
 
-    <!-- Web manifest -->
     <link rel="manifest" href="/site.webmanifest" />
 
     <meta name="description" content={description} />
+ 
     <meta name="author" content={SEO.author} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={`${Astro.site}${Astro.url.pathname}`}>
-    <!-- Open Graph / Facebook -->
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogimage.url} />
@@ -58,7 +53,6 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <meta property="og:locale" content={SEO.locale} />
     
 
-    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
@@ -68,7 +62,6 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
   
     <meta name="theme-color" content="#0E0E11"/>
 
-    <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
     
   </head>
@@ -76,7 +69,8 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <SpeedInsights/>
     <div class="blur-circle"></div>
     <div
-      style="  background:linear-gradient(45deg, rgba(96, 250, 155, 0) 10.79%, rgba(96, 250, 170, 0.03) 40.92%, rgba(96, 250, 155, 0) 90.35%)"
+      style="  background:linear-gradient(45deg, rgba(96, 250, 155, 0) 10.79%, rgba(96, 250, 170, 0.03) 40.92%, 
+rgba(96, 250, 155, 0) 90.35%)"
       class="fixed top-0 left-0 w-full h-full pointer-events-none -z-1"
     >
     </div>
@@ -89,6 +83,6 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <Footer />
     <script>
       import "../scripts/menu.js";
-    </script>
+</script>
   </body>
 </html>

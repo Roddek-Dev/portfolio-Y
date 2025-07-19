@@ -47,7 +47,8 @@ const baseClasses = `
     disabled:opacity-50
     disabled:cursor-not-allowed
     disabled:hover:scale-100
-    disabled:hover:bg-none
+    
+disabled:hover:bg-none
     disabled:hover:shadow-none
     aria-disabled:opacity-50
     aria-disabled:cursor-not-allowed
@@ -55,7 +56,6 @@ const baseClasses = `
     aria-disabled:hover:bg-none
     aria-disabled:hover:shadow-none
 `;
-
 // Specific classes for each variant
 const variantClasses = {
     default: `
@@ -68,7 +68,8 @@ const variantClasses = {
         max-sm:py-2 
         max-sm:px-3 
         text-lg 
-        max-xl:text-base 
+      
+max-xl:text-base 
         max-sm:text-sm 
         hover:bg-linear-to-l 
         bg-linear-to-r 
@@ -80,7 +81,8 @@ const variantClasses = {
     big: `
         font-normal 
         gap-3 
-        max-md:gap-1 
+        
+max-md:gap-1 
         text-blacktext 
         dark:text-mint-50 
         dark:hover:text-white 
@@ -104,7 +106,8 @@ const variantClasses = {
         dark:text-mint-50 
         text-blacktext
         dark:hover:text-white 
-        px-6 
+   
+px-6 
         py-4 
         max-xl:px-5 
         max-sm:py-2 
@@ -117,32 +120,27 @@ const variantClasses = {
         dark:hover:bg-mint-500
     `,
 };
-
 // Icon classes for each variant
 const iconClasses = {
     default: "size-5",
     big: "size-5",
     dark: "size-5 dark:text-mint-300 text-blacktext group-hover:text-blacktext dark:group-hover:text-white transition-colors",
 };
-
 // Combine base classes with variant-specific classes
 const buttonClasses = `${baseClasses} ${variantClasses[variant]}`;
-
 // Generate aria-label if not provided
 const buttonAriaLabel = ariaLabel || (iconName ? `${text} ${iconName}` : text);
-
 // Determine if it's an external link
 const isExternalLink = isExternal || link.startsWith('http');
-
 // Additional attributes for external links
-const externalAttributes = isExternalLink ? {
+const externalAttributes = isExternalLink ?
+{
     target: '_blank',
     rel: 'noopener noreferrer'
 } : {};
-
 // Loading state
-const loadingText = isLoading ? 'Loading...' : text;
-const loadingAriaLabel = isLoading ? `${buttonAriaLabel} - Loading` : buttonAriaLabel;
+const loadingText = isLoading ? 'Cargando...' : text;
+const loadingAriaLabel = isLoading ? `${buttonAriaLabel} - Cargando` : buttonAriaLabel;
 ---
 
 <div
@@ -151,7 +149,8 @@ const loadingAriaLabel = isLoading ? `${buttonAriaLabel} - Loading` : buttonAria
 >
     <a 
         class:list={[buttonClasses, className]} 
-        href={disabled ? '#' : link}
+        href={disabled ?
+'#' : link}
         aria-label={loadingAriaLabel}
         role="button"
         aria-disabled={disabled}

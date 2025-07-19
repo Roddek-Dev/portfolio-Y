@@ -9,7 +9,6 @@ interface Props {
 }
 
 const { size = "md", lang, linkEnabled = true } = Astro.props as Props;
-
 const baseClasses = {
   container: [
     "flex items-center w-fit",
@@ -25,14 +24,12 @@ const baseClasses = {
     "bg-black rounded-full p-1",
   ].join(" "),
 };
-
 const sizeClasses = {
   xs: "size-5",
   md: "size-7",
 };
 
 const selectedLanguage = getLanguage(lang);
-
 const getContainerClasses = () => {
   const textSize = selectedLanguage.name.length > 10 ? "text-sm" : "text-base";
   return `${baseClasses.container} ${textSize}`;
@@ -40,17 +37,19 @@ const getContainerClasses = () => {
 
 const getIconContainerClasses = () => {
   return `${baseClasses.iconContainer} ${sizeClasses[size]} max-lg:size-6 max-sm:size-5 ${
-    selectedLanguage.className ? selectedLanguage.className : ""
+    selectedLanguage.className ?
+selectedLanguage.className : ""
   }`;
 };
 ---
 
 {
-  linkEnabled ? (
+  linkEnabled ?
+(
     <a
       class="cursor-pointer"
       href={`/blog/techs/${lang}`}
-      aria-label={`View articles about ${selectedLanguage.name}`}
+      aria-label={`Ver artículos sobre ${selectedLanguage.name}`}
       role="link"
     >
       <span
@@ -61,7 +60,7 @@ const getIconContainerClasses = () => {
         <div
           class={getIconContainerClasses()}
           role="img"
-          aria-label={`${selectedLanguage.name} icon`}
+          aria-label={`Icono de ${selectedLanguage.name}`}
         >
           <Icon class="w-full!" name={selectedLanguage.iconName} />
         </div>
@@ -75,9 +74,10 @@ const getIconContainerClasses = () => {
       aria-hidden="true"
     >
       <div
-        class={getIconContainerClasses()}
+      
+   class={getIconContainerClasses()}
         role="img"
-        aria-label={`${selectedLanguage.name} icon`}
+        aria-label={`Icono de ${selectedLanguage.name}`}
       >
         <Icon class="w-full!" name={selectedLanguage.iconName} />
       </div>
