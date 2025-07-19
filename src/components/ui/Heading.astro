@@ -21,14 +21,13 @@ const Tag = `h${level}`;
         <>
             {text}
             {textGradient && " "}
-        </> 
+        </>
     )}
     {textGradient && (
-  
-       <b
+        <b
             class:list={[
-                "bg-linear-to-r from-riptide-500 to-mint-400 dark:from-riptide-500 dark:to-mint-500 text-transparent bg-clip-text",
-                level === 1 
+                "bg-linear-to-r from-purple-500 to-violet-400 dark:from-purple-500 dark:to-violet-500 text-transparent bg-clip-text",
+                level === 1
             ]}
         >{textGradient}</b>
     )}

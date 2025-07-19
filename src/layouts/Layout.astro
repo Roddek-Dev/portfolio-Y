@@ -24,7 +24,7 @@ const ogImageUrl = `${siteUrl}${ogimage.url}`;
 
 <html
   lang="es"
-  class="dark:bg-[#0E0E11] bg-mint-50/5 font-montserrat scroll-smooth"
+  class="dark:bg-[#1E1E2A] bg-purple-50/5 font-montserrat scroll-smooth"
 >
   <head>
     <meta charset="UTF-8" />
@@ -39,11 +39,9 @@ const ogImageUrl = `${siteUrl}${ogimage.url}`;
     <link rel="manifest" href="/site.webmanifest" />
 
     <meta name="description" content={description} />
- 
     <meta name="author" content={SEO.author} />
     <meta name="robots" content="index, follow" />
- 
-       <link rel="canonical" href={`${Astro.site}${Astro.url.pathname}`}>
+    <link rel="canonical" href={`${Astro.site}${Astro.url.pathname}`}>
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
@@ -52,34 +50,31 @@ const ogImageUrl = `${siteUrl}${ogimage.url}`;
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SEO.sitename} />
     <meta property="og:locale" content={SEO.locale} />
-    
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
-    <meta name="twitter:image:alt" content={ogimage.alt} 
- />
+    <meta name="twitter:image:alt" content={ogimage.alt} />
     <meta name="twitter:site" content={SEO.twitter} />
-  
-    <meta name="theme-color" content="#0E0E11"/>
+    <meta name="theme-color" content="#1E1E2A"/>
 
     <link rel="sitemap" href="/sitemap-index.xml" />
-    
+
   </head>
   <body class="overflow-x-hidden">
     <SpeedInsights/>
     <div class="blur-circle"></div>
     <div
-      style="  background:linear-gradient(45deg, rgba(96, 250, 155, 0) 10.79%, rgba(96, 250, 170, 0.03) 40.92%, 
-rgba(96, 250, 155, 0) 90.35%)"
+      style="  background:linear-gradient(45deg, rgba(200, 100, 250, 0) 10.79%, rgba(180, 120, 230, 0.03) 40.92%,
+rgba(200, 100, 250, 0) 90.35%)"
       class="fixed top-0 left-0 w-full h-full pointer-events-none -z-1"
     >
     </div>
     <Header />
 
     <div class="min-h-[85vh] ">
-  
+
      <slot />
     </div>
 

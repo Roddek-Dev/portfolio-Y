@@ -26,17 +26,16 @@ allPosts.sort(
       class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-black my-6 leading-6 font-medium"
     >
       Me encanta <b
-        class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent 
- 
-bg-clip-text"
+        class="bg-linear-to-r from-purple-500 to-violet-500 dark:from-purple-300 dark:to-violet-300 text-transparent
+ bg-clip-text"
         >convertir ideas en proyectos reales.</b
       >
       <br /> Aquí te muestro algunos de los <b
-        class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
+        class="bg-linear-to-r from-purple-500 to-violet-500 dark:from-purple-300 dark:to-violet-300 text-transparent bg-clip-text"
         >desarrollos</b
       > en los que he trabajado, aplicando tecnología, diseño y mucha creatividad.
  <b
-        class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
+        class="bg-linear-to-r from-purple-500 to-violet-500 dark:from-purple-300 dark:to-violet-300 text-transparent bg-clip-text"
         >¡Échales un vistazo!</b
       >
     </p>
@@ -51,8 +50,6 @@ bg-clip-text"
       allPosts.map((post) => (
         <Project
           url={post.url}
-    
- 
           title={post.frontmatter.title}
           description={post.frontmatter.description}
           date={post.frontmatter.pubDate}
@@ -67,10 +64,8 @@ bg-clip-text"
     id="moreProjects"
     class="absolute bottom-0 left-0 w-full flex justify-center text-center bg-linear-to-t from-[#FBFEFD] dark:from-[#0e0e10] from-55% to-transparent to-100% pb-30 pt-52"
   >
-    
- <button
-    
-    class="absolute font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
+    <button
+      class="absolute font-bold cursor-pointer text-purple-400 dark:text-purple-100 hover:text-purple-500 dark:hover:text-purple-300 transition-all"
     >
       Ver Más Proyectos...
     </button>

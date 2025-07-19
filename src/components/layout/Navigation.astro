@@ -8,29 +8,29 @@ const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
 };
 
 const menu = {
-  about: { name: "Sobre mi", path: "/about-me" },
-  home: { name: "Inicio", path: "/#home" },
-  experience: { name: "Experiencia", path: "/#experience" },
-  projects: { name: "Proyectos", path: "/#projects" },
+  about: { name: "About Me", path: "/about-me" },
+  home: { name: "Home", path: "/#home" },
+  experience: { name: "Experience", path: "/#experience" },
+  projects: { name: "Projects", path: "/#projects" },
 };
 // Common base classes
 const baseClasses = {
   nav: "nav-links flex w-full justify-center gap-6 max-md:gap-3 max-md:py-6",
-  link: "px-2 py-2 transition-all hover:text-mint-300 max-md:mx-auto max-md:w-full max-md:px-6 max-md:py-2 ",
+  link: "px-2 py-2 transition-all hover:text-purple-300 max-md:mx-auto max-md:w-full max-md:px-6 max-md:py-2 ",
   socialContainer: "flex items-center justify-center gap-5 md:hidden",
   dropdown: "relative group flex items-center",
   dropdownMenu: "absolute left-0 top-full hidden group-hover:block bg-white dark:bg-zinc-800 shadow-lg rounded-md py-2 min-w-[200px] z-50",
-  dropdownItem: "block px-4 py-2 text-sm hover:bg-mint-100 dark:hover:bg-zinc-700 transition-colors"
+  dropdownItem: "block px-4 py-2 text-sm hover:bg-purple-100 dark:hover:bg-zinc-700 transition-colors"
 } as const;
 ---
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const isHome = window.location.pathname === "/";
-    
+
     // Classes for link states
     const linkClasses = {
-      active: ["text-mint-500","dark:text-mint-400", "font-bold", "[text-shadow:1px_1px_11px_rgba(208,251,229,0.7)]"],
+      active: ["text-purple-500","dark:text-purple-400", "font-bold", "[text-shadow:1px_1px_11px_rgba(200,100,250,0.7)]"],
       inactive: ["dark:text-zinc-300",  "text-black"]
     };
 
@@ -58,7 +58,7 @@ const baseClasses = {
 
     function setupScrollSpy() {
       if (!isHome) return;
- const sections = document.querySelectorAll("section[id]");
+ const sections = document.querySelectorAll("section:not([data-no-scrollspy])[id]"); // Exclude sections with data-no-scrollspy attribute
       const navLinks = document.querySelectorAll("nav a");
 
       const observerOptions = {
@@ -73,7 +73,7 @@ const baseClasses = {
             if (sectionId) {
               navLinks.forEach(link => {
                 const path = link.getAttribute("data-path");
-        
+
                  toggleLinkClasses(link, path === `/#${sectionId}`);
               });
             }
@@ -89,14 +89,14 @@ const baseClasses = {
   });
  </script>
 
-<nav 
+<nav
   class={baseClasses.nav}
   role="navigation"
   aria-label="Main Navigation"
 >
   {
     items.map((key: string) => {
-      const item = menu[key as keyof typeof menu];
+      const item = menu?.[key as keyof typeof menu];
       if (!item) return null;
 
       if ('dropdown' in item) {
@@ -104,21 +104,21 @@ const baseClasses = {
           <div class={baseClasses.dropdown}>
             <a
               href={item.path}
-     
+
            class={baseClasses.link}
               data-path={item.path}
               aria-label={item.name}
               aria-current={item.path === Astro.url.pathname ? 'page' : undefined}
             >
-              {item.name} 
+              {item.name}
             </a>
-    
+
              <div class={baseClasses.dropdownMenu}>
               {(item as { dropdown: { path: string; name: string; }[] }).dropdown.map((dropdownItem) => (
                 <a
                   href={dropdownItem.path}
                   class={baseClasses.dropdownItem}
-             
+
            data-path={dropdownItem.path}
                   aria-label={dropdownItem.name}
                 >
@@ -126,7 +126,7 @@ const baseClasses = {
                 </a>
               ))}
             </div>
- 
+
            </div>
         );
  }
@@ -141,17 +141,17 @@ const baseClasses = {
         >
           {item.name}
         </a>
-   
+
        );
     })
   }
-  
-  <div 
+
+  <div
     class={baseClasses.socialContainer}
     role="group"
     aria-label="Social Media Links"
   >
-    <Social link={staticData.data.github} iconName={staticData.data.githubIconName} />
-    <Social link={staticData.data.linkedin} iconName={staticData.data.linkedinIconName} />
+    <Social link={staticData?.data?.github} iconName={staticData?.data?.githubIconName} />
+    <Social link={staticData?.data?.linkedin} iconName={staticData?.data?.linkedinIconName} />
   </div>
 </nav>
