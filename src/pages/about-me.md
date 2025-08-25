@@ -2,10 +2,10 @@
 layout: /src/layouts/MarkdownAbout.astro
 title: "Yehimy Fagua | Mi Perfil Profesional 🚀"
 description: "Soy una persona altamente comunicativa y disfruto profundamente del trabajo en equipo. Mi capacidad para comunicarme eficazmente y colaborar con los demás me permite contribuir de manera significativa al logro de objetivos comunes. Aunque mi experiencia profesional es limitada, esto no ha sido un obstáculo para mí, al contrario, me impulsa a esforzarme aún más para aprender y adquirir nuevos conocimientos en mi área de trabajo. Soy una persona alegre y optimista, cualidades que me permiten mantener un ambiente de trabajo positivo y colaborativo. Mi entusiasmo por el crecimiento personal y profesional me impulsa a dar siempre lo mejor de mí. Valoro la importancia del aprendizaje continuo y busco oportunidades para mejorar mis habilidades y conocimientos."
-author: "Yehimy Daniela Velandia Fagua"
+author: "Yehimy Fagua"
 image:
-  url: "/images/efeeleprofile.webp"
-  alt: "Foto de Yehimy Daniela Velandia Fagua para el currículum"
+  url: "/images/guapa.jpeg"
+  alt: "Foto de Yehimy Fagua para el currículum"
 ---
 
 Soy una persona altamente comunicativa y disfruto profundamente del trabajo en equipo. Mi capacidad para comunicarme eficazmente y colaborar con los demás me permite contribuir de manera significativa al logro de objetivos comunes. 
